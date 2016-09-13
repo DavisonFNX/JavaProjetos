@@ -12,6 +12,7 @@ public class Product {
 		int x; // primeiro número inserido pelo usuário
 		int y; // segundo número inserido pelo usuário
 		int z; // terceiro número inserido pelo usuário
+		int soma;
 		int result; // produto dos números
 		
 		System.out.print( "Entre com o primeiro inteiro: " ); // solicita entrada
@@ -24,8 +25,11 @@ public class Product {
 		z = input.nextInt(); // lê o terceiro inteiro
 		
 		result = x * y * z; // calcula o produto dos números
+		soma = x + y + z;
 		
 		System.out.printf( "O produto é %d\n", result );
+		
+		System.out.printf( "A soma é %d\n", soma );
 		
 
 	} // fim do método
