@@ -1,3 +1,4 @@
+package Testes;
 class Argumentos {
 	
 	public static void main( String[] args ){
