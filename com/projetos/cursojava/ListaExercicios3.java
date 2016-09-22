@@ -378,6 +378,8 @@ public class ListaExercicios3 {
 		}else if (idoso > jovem && idoso > adulto){
 			System.out.println( "A população é de maioria idosa com " + (idoso / pessoas) *100 +"%.");
 		}
+		
+		
 		*/
 		
 		
