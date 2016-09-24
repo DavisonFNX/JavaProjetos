@@ -1,5 +1,6 @@
 package com.projetos.cursojava;
 
+import java.text.DecimalFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -380,7 +381,75 @@ public class ListaExercicios3 {
 		}
 		
 		
+		
+		System.out.print( "Digite a quantiade de turmas: " );
+		int turmas = input.nextInt();
+		int totalAlunos = 0;
+		int alunos;
+		for (int i = 1; i <= turmas; i ++){
+			
+			do {
+				System.out.print( "Digite a quantidade de alunos da turma " + i +" (max. 40 alunos):" );
+				alunos = input.nextInt();
+				if ( alunos > 40){
+					System.out.print( "Número de alunos ultrapassou a quantidade de 40 por turma!\n\n" );
+				}
+			} while (alunos > 40);
+			
+			totalAlunos += alunos;
+			
+		}
+		System.out.println( " " );
+		System.out.println( "A media de alunos por classe é de " + totalAlunos / turmas );
+		
+		int conter = 0;
+		double valores = 0;
+		int token = 0;
+		double totalCDS =0;
+		
+		System.out.print( "Digite a quantidade de coleções de CDs para o calculo: " );
+		int CDS = input.nextInt();
+		
+		for (int i =1; i <= CDS; i++){
+			System.out.print( "Digite o valor da coleção " + i + " : " );
+			totalCDS += input.nextDouble();
+			
+			
+		}
+		
+		System.out.println( "Total inverstido em CDS: R$ " + totalCDS );
+		System.out.print( "O valor médio gasto em cada CD foi de R$ " + totalCDS / CDS );
+		
+		
+		double valorTabela = 1.99;
+		
+		System.out.println( "loja Quase Dois - Tabela de preços" );
+		for (int i = 1 ; i <= 50 ; i++){
+			System.out.println(i + " - R$ " + valorTabela * i);
+		}
 		*/
+		
+		System.out.print( "Digite o valor da unidade do pão: " );
+		double valorTabela = input.nextDouble();
+		DecimalFormat df = new DecimalFormat("0.00##");
+		String saida;
+		
+		System.out.println( " " );
+		System.out.println( "Preço do pão: R$ " + valorTabela );
+		System.out.println( "Panificadora Pão de Ontem - Tabela de preços" );
+		for (int i = 1 ; i <= 50 ; i++){
+			if (i < 10){
+			saida = df.format(valorTabela * i);
+			System.out.println(i + "  - R$ " + saida);
+			}else{
+				saida = df.format(valorTabela * i);
+				System.out.println(i + " - R$ " + saida);
+			}
+		}
+		
+		
+		
+		
 		
 		
 		
