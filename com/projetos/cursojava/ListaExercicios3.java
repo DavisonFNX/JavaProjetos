@@ -427,7 +427,7 @@ public class ListaExercicios3 {
 		for (int i = 1 ; i <= 50 ; i++){
 			System.out.println(i + " - R$ " + valorTabela * i);
 		}
-		*/
+		
 		
 		System.out.print( "Digite o valor da unidade do pão: " );
 		double valorTabela = input.nextDouble();
@@ -446,7 +446,37 @@ public class ListaExercicios3 {
 				System.out.println(i + " - R$ " + saida);
 			}
 		}
+		*/
+		int token = 1;
+		double valoresMercadoria = 0;
+		double totalMercadoria = 0;
+		DecimalFormat df = new DecimalFormat("0.00##");
+		String saidaCaixa;
+		String saidaDinheiro;
+		int cont = 1;
 		
+		System.out.println( "Lojas Tabajara" );
+		System.out.print( "Digite o valor do produto " + cont + " ou 0 pra sair: ");
+		
+		while (token != 0){
+			valoresMercadoria = input.nextDouble();
+			if (valoresMercadoria == 0){
+				token = 0;
+			}else {
+				saidaCaixa = df.format(valoresMercadoria);
+				System.out.print( "Produto " + cont + ": R$ " + saidaCaixa + "  ");
+				totalMercadoria += valoresMercadoria;
+				cont += 1;
+			}
+			
+		}
+		System.out.println( " " );
+		saidaCaixa = df.format(totalMercadoria);
+		System.out.println( "Total: R$ " + saidaCaixa);
+		System.out.print( "Dinheiro: R$ ");
+		double dinheiro = input.nextDouble();
+		saidaDinheiro = df.format(dinheiro - totalMercadoria);
+		System.out.println( "Troco R$ " + saidaDinheiro);
 		
 		
 		
@@ -458,5 +488,6 @@ public class ListaExercicios3 {
 		}
 
 	}
+
 
 
