@@ -446,7 +446,8 @@ public class ListaExercicios3 {
 				System.out.println(i + " - R$ " + saida);
 			}
 		}
-		*/
+		
+		
 		int token = 1;
 		double valoresMercadoria = 0;
 		double totalMercadoria = 0;
@@ -479,10 +480,29 @@ public class ListaExercicios3 {
 		System.out.println( "Troco R$ " + saidaDinheiro);
 		
 		
+		 System.out.print( "Digite o valor do fatorial: " );
+		 int fatorial = input.nextInt();
+		 long n1 = fatorial * (fatorial - 1);
+		 System.out.println();
+		 System.out.print( "O fatorial de: " + fatorial + "! " + " = " + fatorial + " . "); 
+		 
+		 for (int i = (fatorial - 1); i > 1; i--){
+			  n1 = n1 * (i - 1);
+			  System.out.print(i + " . " );
+		 }
+			System.out.print( "1 = " +n1 );
+		*/
+		
+		double temperaturaMenor;
+		double temperaturaMaior;
+		double mediaTemperatura;
+		DecimalFormat df = new DecimalFormat("0.00##");
 		
 		
 		
 		
+		
+			
 		
 		System.out.println( "\n\nFim do programa!" );
 		}
