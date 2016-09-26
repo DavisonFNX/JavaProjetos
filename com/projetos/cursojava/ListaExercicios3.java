@@ -496,8 +496,15 @@ public class ListaExercicios3 {
 		double temperaturaMenor;
 		double temperaturaMaior;
 		double mediaTemperatura;
+		int index = 0;
 		DecimalFormat df = new DecimalFormat("0.00##");
 		
+		System.out.println( "" );
+		
+		while (index == 0){
+			
+			
+		}
 		
 		
 		
