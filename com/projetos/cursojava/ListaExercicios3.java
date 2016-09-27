@@ -491,7 +491,7 @@ public class ListaExercicios3 {
 			  System.out.print(i + " . " );
 		 }
 			System.out.print( "1 = " +n1 );
-		*/
+		
 		
 		double temperaturaMenor = 1000000;
 		double temperaturaMaior = 0;
@@ -527,7 +527,9 @@ public class ListaExercicios3 {
 		System.out.println( "A menor temperatura é " + temperaturaMenor);
 		System.out.println( "A maior temperatura é " + temperaturaMaior);
 		System.out.println ( "A média das temperaturas é " + somaTemperatura /(cont -1) ); 
-
+		
+		*/
+		
 		
 		
 		
