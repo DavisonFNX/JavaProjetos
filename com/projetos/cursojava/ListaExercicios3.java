@@ -493,19 +493,41 @@ public class ListaExercicios3 {
 			System.out.print( "1 = " +n1 );
 		*/
 		
-		double temperaturaMenor;
-		double temperaturaMaior;
+		double temperaturaMenor = 1000000;
+		double temperaturaMaior = 0;
+		double temperatura = 0;
+		double somaTemperatura = 0;
 		double mediaTemperatura;
-		int index = 0;
-		DecimalFormat df = new DecimalFormat("0.00##");
+		int index = 1;
+		int cont = 1;
+
+		System.out.println( "Digite o valor da temperaturas ou tecle \"0\" para sair: ");
 		
-		System.out.println( "" );
-		
-		while (index == 0){
-			
-			
+		while ( index == 1 ) {
+			System.out.print( "Digite a temperatura:" );
+			temperatura = input.nextDouble();
+			if ( temperatura == 0 ) {
+				index = 0;
+			}else {
+				//System.out.print( "Valor da temperatura " + cont + " : " );
+				somaTemperatura += temperatura;
+				cont += 1;
+				if ( temperatura > temperaturaMaior ) {
+					temperaturaMaior = temperatura;
+				}
+
+				if ( temperatura < temperaturaMenor ) {
+					temperaturaMenor = temperatura;
+				} 			
+			}
+
 		}
 		
+		System.out.println( " " );
+		System.out.println( "A menor temperatura é " + temperaturaMenor);
+		System.out.println( "A maior temperatura é " + temperaturaMaior);
+		System.out.println ( "A média das temperaturas é " + somaTemperatura /(cont -1) ); 
+
 		
 		
 		
