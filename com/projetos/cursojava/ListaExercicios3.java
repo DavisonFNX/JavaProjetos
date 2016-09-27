@@ -528,12 +528,199 @@ public class ListaExercicios3 {
 		System.out.println( "A maior temperatura é " + temperaturaMaior);
 		System.out.println ( "A média das temperaturas é " + somaTemperatura /(cont -1) ); 
 		
-		*/
 		
 		
+		System.out.print( "Digite um numero qualquer inteiro: " );
+		int primo = input.nextInt();
+		int token =0;
 		
-		
+		for (int i = 1; i <= primo; i++) {
+			if (primo % i == 0) {
+				token += 1;
+			}
+		}
+		if (token > 2){
+			System.out.println( "O número " + primo + " não é primo." );
 			
+		}else {
+			System.out.println( "O número " + primo + " é primo." );
+		}
+		
+		
+		System.out.print( "Digite um numero qualquer inteiro: " );
+		int primo = input.nextInt();
+		int token = 0;
+		
+		for (int i = 1; i <= primo; i++) {
+			
+			for (int j = 1; j <= i; j ++){
+				if (i % j == 0) {
+					token += 1;
+					
+				}
+			}
+			//System.out.print(token);
+			if (token == 2){
+				System.out.print(i + "  ");
+			}
+			token = 0;
+			
+		}
+		
+		
+		System.out.print( "Montar a tabuada de: " );
+		int tabuada = input.nextInt();
+		System.out.print( "Começa por: " );
+		int inicio = input.nextInt();
+		System.out.print( "Termina por: " );
+		int fim = input.nextInt();
+		
+		int token = 0;
+		
+		if (fim < inicio) {
+			token = 1;
+			while (token == 1){
+				System.out.print( "Valor final menor que inicial, digite novamente: " );
+				fim = input.nextInt();
+				if (fim > inicio){
+					token = 0;
+				}
+			}
+		}
+		
+		System.out.println( "Vou montar a tabuada de " + tabuada + " começando em " + inicio + " terminando em " + fim );
+
+		for (int i = inicio; i <= fim; i ++) {
+			System.out.println( tabuada + " x " + i + " = " + (tabuada * i) );
+		}
+		
+		
+		DecimalFormat df = new DecimalFormat("0,000.00");
+		
+		
+		System.out.println( "Programa calculo salarial." );
+		String saida;
+		double salarioInicio = 600 + (600 * 0.015);
+		double porcentagemInicio = 0.015;
+		System.out.print( "Digite o ano atual: " );
+		int ano = input.nextInt();
+		
+		for (int i = 2010; i <= ano; i++){
+			porcentagemInicio *= 2;
+			salarioInicio = salarioInicio + (salarioInicio * porcentagemInicio);
+			saida = df.format(salarioInicio);
+			System.out.println( "Ano de " + i + " = R$ " + saida);
+			
+		}
+		*/
+		int token = 0;
+		int qtd100 = 0;
+		int qtd101 = 0;
+		int qtd102 = 0;
+		int qtd103 = 0;
+		int qtd104 = 0;
+		int qtd105 = 0;
+		int qtd106 = 0;
+		double total = 0;
+		
+		System.out.println( " "); 
+		System.out.println( "Cardápio Lanchonete" );
+		System.out.println( " ");
+		System.out.println( "Especificação   Código   Preço");
+		System.out.println( "Cachorro Quente 100      R$ 1,20" );
+		System.out.println( "Bauru Simples   101      R$ 1,30" );
+		System.out.println( "Bauru com ovo   102      R$ 1,50" );
+		System.out.println( "Hanbúrguer      103      R$ 1,20" );
+		System.out.println( "Cheeseburguer   104      R$ 1,30" );
+		System.out.println( "Refrigerante    105      R$ 1,00" );
+		System.out.println( "--------------------------------" );
+		
+		System.out.print( "Digite o o codigo de seu pedido ou \"0\"pra sair: ");
+		int codigo = input.nextInt();
+		if (codigo == 0){
+			token = 1;
+		}
+		while (token == 0){
+			
+			System.out.print( "Digite a quantidade: " );
+			int quantidade = input.nextInt();
+			System.out.println( " ");
+			
+			
+			switch (codigo){
+				case 100:
+					qtd100 += quantidade;					
+					break;
+				case 101:
+					qtd101 += quantidade;
+					break;
+				case 102:
+					qtd102 += quantidade;
+					break;
+				case 103:
+					qtd103 += quantidade;
+					break;
+				case 104:
+					qtd104 += quantidade;
+					break;
+				case 105:
+					qtd105 += quantidade;
+					break;
+				default:
+					System.out.println( "******** Código inválido! ********");
+			}
+			System.out.println( "Cardápio Lanchonete" );
+			System.out.println( " ");
+			System.out.println( "Especificação   Código   Preço");
+			System.out.println( "Cachorro Quente 100      R$ 1,20" );
+			System.out.println( "Bauru Simples   101      R$ 1,30" );
+			System.out.println( "Bauru com ovo   102      R$ 1,50" );
+			System.out.println( "Hanbúrguer      103      R$ 1,20" );
+			System.out.println( "Cheeseburguer   104      R$ 1,30" );
+			System.out.println( "Refrigerante    105      R$ 1,00" );
+			System.out.println( "--------------------------------" );
+			System.out.print( "Digite o o codigo de seu pedido ou \"0\"pra sair: ");
+			codigo = input.nextInt();
+			
+			
+			if (codigo == 0){
+				token = 1;
+			}
+			
+		}
+		
+		if (qtd100 > 0){
+			System.out.println( "Cachorro Quente .... " + qtd100 + " Unid = R$ " + (qtd100 * 1.2) );
+			total += (qtd100 * 1.2);
+		}
+		if (qtd101 > 0){
+			System.out.println( "Bauru Simples ...... " + qtd101 + " Unid = R$ " + (qtd101 * 1.3) );
+			total += (qtd101 * 1.3);
+		}
+		if (qtd102 > 0){
+			System.out.println( "Bauru com ovo ...... " + qtd102 + " Unid = R$ " + (qtd102 * 1.5) );
+			total += (qtd102 * 1.5);
+		}
+		if (qtd103 > 0){
+			System.out.println( "Hanbúrguer ......... " + qtd103 + " Unid = R$ " + (qtd103 * 1.2) );
+			total += (qtd103 * 1.2);
+		}
+		if (qtd104 > 0){
+			System.out.println( "Cheeseburguer ...... " + qtd104 + " Unid = R$ " + (qtd104 * 1.3) );
+			total += (qtd104 * 1.3);
+		}
+		if (qtd105 > 0){
+			System.out.println( "Refrigerante ....... " + qtd105 + " Unid = R$ " + (qtd105 * 1.0) );
+			total += (qtd105 * 1.0);
+		}
+		System.out.println( "======================================");
+		System.out.println( "Total a pagar: R$ " + total );
+		
+		
+		
+		
+		
+		
 		
 		System.out.println( "\n\nFim do programa!" );
 		}
