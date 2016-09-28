@@ -317,7 +317,7 @@ public class ListaExercicios3 {
 		 for (int i = (fatorial - 1); i > 1; i--){
 			  n1 = n1 * (i - 1);
 		 }
-			System.out.print( "O fatorial é: " +n1 );	
+			System.out.print( "O fatorial é: " + n1 );	
 		
 		
 		System.out.print( "Digite um número inteiro positivo: " );
@@ -612,7 +612,7 @@ public class ListaExercicios3 {
 			System.out.println( "Ano de " + i + " = R$ " + saida);
 			
 		}
-		*/
+		
 		int token = 0;
 		int qtd100 = 0;
 		int qtd101 = 0;
@@ -715,10 +715,69 @@ public class ListaExercicios3 {
 		}
 		System.out.println( "======================================");
 		System.out.println( "Total a pagar: R$ " + total );
+		*/
+		
+		int mmc1 = 0;
+		int mmc2 = 0;
+		int numerador = 1;
+		int denominador = 1;
+		int mmcTotal1 = 0;
+		int mmcTotal2 = 0;
+		int soma = 0;
+		System.out.print( "Digite a quantidade de vezes da série: " );
+		int numeroVezes = input.nextInt();
 		
 		
 		
+		for (int i = 1; i <= numeroVezes; i++){	
+					
+						
+			if (i <= 2){
+				
+				System.out.print( numerador +"/" + denominador );
+				if (i < 2){
+				System.out.print( " + ");
+				
+				mmc1 = ( (((denominador + 2) * (denominador )) / ( denominador)) ) * (numerador) + ((((denominador + 2) * (denominador)) / (denominador + 2)) * (numerador + 1));
+				mmc2 = denominador * (denominador + 2);
+				mmcTotal1 = mmc1;
+				mmcTotal2 = mmc2;
+				
+				}
+							
+				numerador += 1;
+				denominador += 2;
+
+								
+			}
+			
+			if (i>2){
+				
+				System.out.print( " + ");
+				System.out.print( numerador +"/" + denominador );
+				mmc2 = denominador * mmcTotal2;
+				mmc1 = (((( mmcTotal2 * denominador ) / mmcTotal2) * mmcTotal1) + (((mmcTotal2 * denominador) / (denominador)) * (numerador)));
+				
+				mmcTotal1 = mmc1;
+				mmcTotal2 = mmc2;
+				
+				
+				numerador += 1;
+				denominador += 2;
+								
+			}
+			
+			
+			
+		}
 		
+		
+		System.out.println( " " );
+		System.out.println( " " );
+		System.out.println( mmcTotal1 +" / " + mmcTotal2 );
+		
+		
+	
 		
 		
 		
