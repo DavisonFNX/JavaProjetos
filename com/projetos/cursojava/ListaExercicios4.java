@@ -10,6 +10,8 @@ public class ListaExercicios4 {
 		
 		Scanner input = new Scanner( System.in );
 		input.useLocale(Locale.US);
+		DecimalFormat df = new DecimalFormat("0.##");
+		
 		/*
 		
 		int[] elementos = new int [5];
@@ -62,7 +64,7 @@ public class ListaExercicios4 {
 		int[] inteiros1 = new int [15];
 		double[] inteiros2 = new double [15];
 		String teste;
-		DecimalFormat df = new DecimalFormat("0.##");
+		
 				
 		for (int i = 0; i< inteiros1.length; i++){
 			System.out.println( "Digite 15 números inteiros: ");
@@ -282,7 +284,7 @@ public class ListaExercicios4 {
 		}
 		
 		System.out.print( "A soma é " + soma);
-		*/	
+			
 		
 		int[] inteiros1 = new int [10];
 		int soma =0;
@@ -298,6 +300,46 @@ public class ListaExercicios4 {
 		}else {
 			System.out.println(soma + " não é múltiplo de 5.");
 		}
+		
+		
+		int[] inteiros1 = new int [10];
+		double soma = 0;
+		
+		
+		for (int i = 0; i< inteiros1.length; i++){
+			System.out.println( "Digite a s 10 números inteiros: ");
+			inteiros1[i] = input.nextInt();
+			if (inteiros1[i] % 2 != 0){
+				soma += inteiros1[i];
+			}
+		}
+		
+		System.out.print( "A média dos impares é " + soma / 10);
+		*/
+		
+		int[] inteiros1 = new int [10];
+		double somaImpar = 0;
+		double somaPar = 0;
+		double somaTotal = 0;
+		String totalPar;
+		String totalImpar;
+		
+		for (int i = 0; i< inteiros1.length; i++){
+			System.out.println( "Digite a s 10 números inteiros: ");
+			inteiros1[i] = input.nextInt();
+			somaTotal += inteiros1[i];
+			
+			if (inteiros1[i] % 2 != 0.0){
+				somaImpar += inteiros1[i];
+			}else {
+				somaPar += inteiros1[i];
+			}
+		}
+		
+		totalImpar = df.format((somaImpar / somaTotal)*100);
+		totalPar = df.format((somaPar / somaTotal)*100);
+		System.out.println( "A média dos impares é de " + totalImpar + " %.");
+		System.out.println( "A média dos pares é de " + totalPar + " %.");
 		
 		
 		
