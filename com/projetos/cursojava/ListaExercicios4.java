@@ -700,7 +700,7 @@ public class ListaExercicios4 {
 		for (int i = 0; i < A.length; i++){
 			System.out.print(B[i] + " " );			
 		}
-		*/
+		
 		
 		int cont = 0;
 		int[] tabuada  = new int[5];
@@ -718,7 +718,31 @@ public class ListaExercicios4 {
 			System.out.println( "===============");
 			System.out.println( " ");
 		}
-				
+		*/		
+		
+		int cont = 0;
+		int[] primo  = new int[10];
+		
+		
+		for (int i = 0; i < primo.length; i++ ){
+			System.out.print( "Digite 10 inteiros: ");
+			primo[i] = input.nextInt();
+		}
+		System.out.println( "===============");
+		
+		for(int i = 0;i < primo.length; i++){
+			for (int j = 1; j <= primo[i]; j++ ){
+				if (primo[i] % j == 0){
+					cont = cont + 1;					
+				}
+			}
+			if (cont == 2){
+				System.out.println(primo[i] + " é primo.");				
+			}else{
+				System.out.println(primo[i] + " não é primo.");
+			}
+			cont = 0;
+		}
 		
 		
 		 
