@@ -718,7 +718,7 @@ public class ListaExercicios4 {
 			System.out.println( "===============");
 			System.out.println( " ");
 		}
-		*/		
+			
 		
 		int cont = 0;
 		int[] primo  = new int[10];
@@ -743,9 +743,74 @@ public class ListaExercicios4 {
 			}
 			cont = 0;
 		}
+				
+		int[] A = new int [10];
+		
+		for (int i = 0; i < A.length; i++){
+			System.out.print( "Digite 10 números inteiros: " );
+			A[i] = input.nextInt();			
+		}
+		System.out.println( "===============");
+		
+		for (int i = 0; i < A.length; i ++){
+			for (int j = 0; j <= A[i]; j++){
+				if (j == 0 ){
+					System.out.println(j + " é elemento neutro.");
+				}else if (j % 2 == 0){
+					System.out.println(j + " é par.");
+				}else{
+					System.out.println(j + " é impar.");
+				}				
+			}
+			System.out.println( "===============");
+		}
 		
 		
+		int[] A = new int [10];
+		
+		for (int i = 0; i < A.length; i++){
+			System.out.print( "Digite 10 números inteiros: " );
+			A[i] = input.nextInt();			
+		}
+		System.out.println( "===============");
+		
+		for (int i = 0; i < A.length; i ++){
+			for (int j = 0; j <= A[i]; j++){
+				if (j == 0 ){
+					System.out.println(j + " é elemento neutro.");
+				}else if (A[i] % j == 0){
+					System.out.println(j + " é divisor de " + A[i]);
+				}				
+			}
+			System.out.println( "===============");
+		}
+		
+		
+		int[] A = new int [11];
+		
+		for (int i = 0; i < A.length; i ++){
+			A[i] = (int) Math.pow(2, i);
+			System.out.println(A[i]);
+		}
+		*/
+		/* 
+		int[] A = new int [11];
+		
+		for (int i = 0; i < A.length; i ++){
+			A[i] = (int) Math.pow(2, i);
+			System.out.println(A[i]);
+		}
+		*/
+		System.out.print( "Digite o numero inteiro para o fatorial: " );
+		 int fatorial = input.nextInt();
+		 int n1 = fatorial * (fatorial - 1);
 		 
+		 for (int i = (fatorial - 1); i > 1; i--){
+			  n1 = n1 * (i - 1);
+		 }
+			System.out.print( "O fatorial é: " + n1 );	
+	
+		
 		
 		
 		
