@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+import com.sun.media.sound.SimpleSoundbank;
+
 public class ListaExercicios5 {
 
 	public static void main(String[] args) {
@@ -29,7 +31,7 @@ public class ListaExercicios5 {
 		}
 		
 		System.out.println(  "O valor maior da matriz é: " + maior + " na posição " + pos[0] + " : " + pos[1] );
-		*/
+		
 		
 		int[][] matrix = new int [10][10];
 		int[] pos = new int [4];
@@ -84,6 +86,36 @@ public class ListaExercicios5 {
 				System.out.println(  "O valor menor da matriz na linha " + i + " é: " + menor + " na posição [" + pos[2] + "]:[" + pos[3] + "]" );
 			}
 		}
+		*/
+		
+		int[][] matrix = new int [3][3];
+		int pares = 0;
+		int impares = 0;
+		
+		for (int i = 0; i < matrix.length; i++ ){
+			for (int j = 0; j < matrix[i].length; j++ ){
+				System.out.print( "Digite os valores da matriz: " );
+				matrix[i][j] = input.nextInt();
+				if (matrix[i][j] % 2 == 0){
+					pares += 1;
+				}else {
+					impares += 1;
+				}
+			}
+		}
+		System.out.println();
+		
+		for (int i = 0; i< matrix.length; i++ ){
+			for (int j = 0; j < matrix[i].length; j++ ){
+				System.out.print( matrix[i][j] +" ");
+				
+			}
+			System.out.println();
+		}
+		System.out.println( "============");
+		System.out.println( "Total de pares da matriz: " + pares );
+		System.out.println( "Total de impares da matriz: " + impares );
+		
 		
 						
 		
