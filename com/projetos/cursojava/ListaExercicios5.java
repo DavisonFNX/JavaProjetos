@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+import javax.xml.bind.ParseConversionEvent;
+
 import com.sun.media.sound.SimpleSoundbank;
 
 public class ListaExercicios5 {
@@ -86,7 +88,7 @@ public class ListaExercicios5 {
 				System.out.println(  "O valor menor da matriz na linha " + i + " é: " + menor + " na posição [" + pos[2] + "]:[" + pos[3] + "]" );
 			}
 		}
-		*/
+		
 		
 		int[][] matrix = new int [3][3];
 		int pares = 0;
@@ -118,9 +120,264 @@ public class ListaExercicios5 {
 		System.out.println( "Total de impares da matriz: " + impares );
 		
 		
-						
+		String[][] calendar = new String[31][24];
+		String token = "A";
+		int dia;
+		int hora;
 		
-	System.out.println( "\n\nFim do programa!" );	
+		do{
+			System.out.println( "================================" );
+			System.out.println( "Programa Agenda Pessoal" );
+			System.out.println();
+			System.out.println( "Digite A para acrecentar um compromisso," );
+			System.out.println( "L para localizar um compromisso" );
+			System.out.println( "ou 0 para sair: ");
+			System.out.println( "================================" );
+			token = input.next().toUpperCase();
+		
+		
+			switch (token) {
+				case "A":
+					System.out.print( "Digite o dia do mês para alteração: " );
+					dia = input.nextInt();
+					System.out.print( "Digite a hora para alterar o comprimisso: " );
+					hora = input.nextInt();
+					System.out.print( "Digite a tarefa: ");
+					calendar[dia][hora] = input.next();				
+					System.out.println();
+					break;
+					
+					
+				case "L" :
+					System.out.print( "Digite o dia do mês: " );
+					dia = input.nextInt();
+					System.out.println( "Digite a hora: " );
+					hora = input.nextInt();
+					System.out.println();
+					System.out.println( "Tarefa: " + calendar[dia][hora]);
+					break;
+				case "0":
+					token ="0";
+					break;
+				default:
+					System.out.println( "Valor inválido!");
+			}			
+		
+		}while (token != "0");
+		
+		
+		String[][][] calendar = new String[31][12][8];
+		String token = "A";
+		int mes;
+		int dia;
+		int hora;
+		
+		do{
+			System.out.println( "================================" );
+			System.out.println( "Programa Agenda Pessoal" );
+			System.out.println();
+			System.out.println( "Digite A para acrecentar um compromisso," );
+			System.out.println( "L para localizar um compromisso" );
+			System.out.println( "ou 0 para sair: ");
+			System.out.println( "================================" );
+			token = input.next().toUpperCase();
+		
+		
+			switch (token) {
+				case "A":
+					System.out.print( "Digite o dia para alteração: " );
+					dia = input.nextInt();
+					System.out.print( "Digite o mês para a alteração: " );
+					mes = input.nextInt();
+					System.out.print( "Digite a hora para alterar o comprimisso: " );
+					hora = input.nextInt();
+					System.out.print( "Digite a tarefa: ");
+					calendar[dia][mes][hora] = input.next();				
+					System.out.println();
+					break;
+					
+					
+				case "L" :
+					System.out.print( "Digite o dia: " );
+					dia = input.nextInt();
+					System.out.print( "Digite o mês: " );
+					mes = input.nextInt();
+					System.out.print( "Digite a hora: " );
+					hora = input.nextInt();
+					System.out.println();
+					System.out.println( "Tarefa: " + calendar[dia][mes][hora]);
+					break;
+				case "0":
+					token ="0";
+					break;
+				default:
+					System.out.println( "Valor inválido!");
+			}			
+		
+		}while (token != "0");
+		*/
+		
+		String[][] jogoVelha = new String[3][3];
+		int numero;
+		int cont = 1;
+		int token = 1;
+		String ganhador = " ";
+		
+		for (int i = 0; i < jogoVelha.length; i++){
+			for (int j = 0; j < jogoVelha.length; j++){
+				jogoVelha[i][j] = Integer.toString(cont);
+				cont += 1;
+			}
+		}
+		cont = 0;
+		do{
+			if (cont >= 9){
+				token = 0;
+				break;
+			}
+			
+			if ( jogoVelha[0][0].equals(jogoVelha[0][1]) && jogoVelha[0][0].equals(jogoVelha[0][2]) ){
+				token = 0;
+				ganhador = jogoVelha[0][0];
+				break;							
+			}else if ( jogoVelha[1][0].equals(jogoVelha[1][1]) && jogoVelha[1][0].equals(jogoVelha[1][2]) ){
+				token = 0;
+				ganhador = jogoVelha[1][0];
+				break;				
+			}else if ( jogoVelha[2][0].equals(jogoVelha[2][1]) && jogoVelha[2][0].equals(jogoVelha[2][2]) ){
+				token = 0;
+				ganhador = jogoVelha[2][0];
+				break;
+				
+			}else if (jogoVelha[0][0].equals(jogoVelha[1][0]) && jogoVelha[0][0].equals(jogoVelha[2][0]) ){
+				token = 0;
+				ganhador = jogoVelha[0][0];
+				break;
+			}else if (jogoVelha[0][1].equals(jogoVelha[1][1]) && jogoVelha[0][1].equals(jogoVelha[2][1]) ){
+				token = 0;
+				ganhador = jogoVelha[0][1];
+				break;
+			}else if (jogoVelha[0][2].equals(jogoVelha[1][2]) && jogoVelha[0][2].equals(jogoVelha[2][2]) ){
+				token = 0;
+				ganhador = jogoVelha[0][2];
+				break;
+				
+			}else if (jogoVelha[0][0].equals(jogoVelha[1][1]) && jogoVelha[0][0].equals(jogoVelha[2][2]) ){
+				token = 0;
+				ganhador = jogoVelha[0][0];
+				break;
+			}else if (jogoVelha[0][2].equals(jogoVelha[1][1]) && jogoVelha[0][2].equals(jogoVelha[2][0]) ){
+				token = 0;
+				ganhador = jogoVelha[0][2];
+				break;
+			}
+			
+			System.out.println( "================");
+			System.out.println( "| JOGO DA VELHA |");
+			System.out.println( "================");
+			System.out.println( "["+ jogoVelha[0][0]+"] | ["+ jogoVelha[0][1]+"] | ["+ jogoVelha[0][2]+"]");
+			System.out.println( "["+ jogoVelha[1][0]+"] | ["+ jogoVelha[1][1]+"] | ["+ jogoVelha[1][2]+"]");
+			System.out.println( "["+ jogoVelha[2][0]+"] | ["+ jogoVelha[2][1]+"] | ["+ jogoVelha[2][2]+"]");
+			System.out.println( "================");
+			System.out.println();
+			System.out.print( "Escolha um número: ");
+			numero = input.nextInt();
+			
+			switch (numero){
+				case 1:
+					if (cont >= 9){
+						token = 0;
+						break;						
+					}
+					System.out.print( "Escolha O ou X: " );
+					jogoVelha[0][0] = input.next().toUpperCase();
+					break;
+				case 2:
+					if (cont >= 9){
+						token = 0;
+						break;						
+					}
+					System.out.print( "Escolha O ou X: " );
+					jogoVelha[0][1] = input.next().toUpperCase();
+					break;
+				case 3:
+					if (cont >= 9){
+						token = 0;
+						break;						
+					}
+					System.out.print( "Escolha O ou X: " );
+					jogoVelha[0][2] = input.next().toUpperCase();
+					break;
+				case 4:
+					if (cont >= 9){
+						token = 0;
+						break;						
+					}
+					System.out.print( "Escolha O ou X: " );
+					jogoVelha[1][0] = input.next().toUpperCase();
+					break;
+				case 5:
+					if (cont >= 9){
+						token = 0;
+						break;						
+					}
+					System.out.print( "Escolha O ou X: " );
+					jogoVelha[1][1] = input.next().toUpperCase();
+					break;
+				case 6:
+					if (cont >= 9){
+						token = 0;
+						break;						
+					}
+					System.out.print( "Escolha O ou X: " );
+					jogoVelha[1][2] = input.next().toUpperCase();
+					break;
+				case 7:
+					if (cont >= 9){
+						token = 0;
+						break;						
+					}
+					System.out.print( "Escolha O ou X: " );
+					jogoVelha[2][0] = input.next().toUpperCase();
+					break;
+				case 8:
+					if (cont > 9){
+						token = 0;
+						break;						
+					}
+					System.out.print( "Escolha O ou X: " );
+					jogoVelha[2][1] = input.next().toUpperCase();
+					break;
+				case 9:
+					if (cont >= 9){
+						token = 0;
+						break;						
+					}
+					System.out.print( "Escolha O ou X: " );
+					jogoVelha[2][2] = input.next().toUpperCase();
+					break;
+				default :
+					System.out.println( "Valor inválido !!");
+			}
+			cont += 1;
+			System.out.println(cont);
+		}while(token != 0);
+		
+		System.out.println();
+		System.out.println( "================");
+		System.out.println( "| JOGO DA VELHA |");
+		System.out.println( "================");
+		System.out.println( "["+ jogoVelha[0][0]+"] | ["+ jogoVelha[0][1]+"] | ["+ jogoVelha[0][2]+"]");
+		System.out.println( "["+ jogoVelha[1][0]+"] | ["+ jogoVelha[1][1]+"] | ["+ jogoVelha[1][2]+"]");
+		System.out.println( "["+ jogoVelha[2][0]+"] | ["+ jogoVelha[2][1]+"] | ["+ jogoVelha[2][2]+"]");
+		System.out.println( "================");
+		System.out.println();
+		System.out.println( "O vencedor é " + ganhador );
+		
+		
+		
+		
+	System.out.println( "\nFim do programa!" );	
 	}
 
 }
