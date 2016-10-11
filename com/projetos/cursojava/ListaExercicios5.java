@@ -109,6 +109,7 @@ public class ListaExercicios5 {
 			for (int j = 0; j < matrix[i].length; j++ ){
 				System.out.print( matrix[i][j] +" ");
 				
+				
 			}
 			System.out.println();
 		}
