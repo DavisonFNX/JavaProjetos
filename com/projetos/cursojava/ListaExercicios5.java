@@ -372,7 +372,7 @@ public class ListaExercicios5 {
 		System.out.println( "["+ jogoVelha[2][0]+"] | ["+ jogoVelha[2][1]+"] | ["+ jogoVelha[2][2]+"]");
 		System.out.println( "================");
 		System.out.println();
-		System.out.println( "O vencedor é " + ganhador );
+		System.out.println( "O vencedor é o jogador: " + ganhador );
 		
 		
 		
